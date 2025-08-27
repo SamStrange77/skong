@@ -1,7 +1,7 @@
 let limit = 1040000
 
 console.log('VERSION 1: FIXED SECONDS');
-console.log('VERSION 2: ADDED MS');
+console.log('VERSION 2: FIXED MS');
 
 let timer = setInterval
 (
@@ -12,6 +12,7 @@ let timer = setInterval
         let minutes = Math.floor(seconds/60);
         let hours = Math.floor(minutes/60);
         let days = Math.floor(hours/24);
+        milliseconds%=1000;
         console.log(seconds);
         document.body.style.setProperty('background-color', `rgb(${Math.ceil((Math.abs(limit-seconds)/limit) * 200)}, ${Math.floor((seconds/limit) * 200)}, 18)`)
         console.log(`rgb(${Math.ceil((Math.abs(limit-seconds)/limit) * 200)}, ${Math.floor((seconds/limit) * 200)}, 0)`);
@@ -65,5 +66,6 @@ function normalised_ms (a)
 {
     return a<100 ? a<10 ? '00'+ a : '0'+a : a;
 }
+
 
 
