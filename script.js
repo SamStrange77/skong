@@ -23,7 +23,7 @@ let timer = setInterval
         document.getElementById('minutes').innerHTML =
         `
             <div class = "value">
-                ${minutes+':'+(seconds%60)}
+                ${minutes+':'+normalised((seconds%60))}
             </div>
             <div>
                 More Minutes!
@@ -55,4 +55,5 @@ let timer = setInterval
 function normalised (a)
 {
     return a<10 ? '0'+a : a;
+
 }
