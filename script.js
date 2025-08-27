@@ -1,5 +1,7 @@
 let limit = 1040000
 
+console.log('VERSION 1: FIXED SECONDS');
+
 let timer = setInterval
 (
     () => 
@@ -57,3 +59,4 @@ function normalised (a)
     return a<10 ? '0'+a : a;
 
 }
+
