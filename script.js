@@ -1,12 +1,14 @@
 let limit = 1040000
 
 console.log('VERSION 1: FIXED SECONDS');
+console.log('VERSION 2: ADDED MS');
 
 let timer = setInterval
 (
     () => 
     {   
-        let seconds = Math.floor(new Date("09-05-2025")/1000 - new Date()/1000 - 16200);
+        let milliseconds = Math.floor(new Date("09-05-2025") - new Date() - 16200000);
+        let seconds = Math.floor(milliseconds/1000);
         let minutes = Math.floor(seconds/60);
         let hours = Math.floor(minutes/60);
         let days = Math.floor(hours/24);
@@ -16,7 +18,7 @@ let timer = setInterval
         document.getElementById('seconds').innerHTML =
         `
             <div class = "value">
-                ${Math.ceil(seconds)}
+                ${Math.ceil(seconds) +'.'+normalised_ms(milliseconds)}
             </div>
             <div>
                 More Seconds!
@@ -25,7 +27,7 @@ let timer = setInterval
         document.getElementById('minutes').innerHTML =
         `
             <div class = "value">
-                ${minutes+':'+normalised((seconds%60))}
+                ${minutes+':'+normalised((seconds%60))+'.'+normalised_ms(milliseconds)}
             </div>
             <div>
                 More Minutes!
@@ -34,7 +36,7 @@ let timer = setInterval
         document.getElementById('hours').innerHTML =
         `
             <div class = "value">
-                ${hours+':'+normalised((minutes%60))+':'+normalised((seconds%60))}
+                ${hours+':'+normalised((minutes%60))+':'+normalised((seconds%60))+'.'+normalised_ms(milliseconds)}
             </div>
             <div>
                 More Hours!
@@ -43,7 +45,7 @@ let timer = setInterval
         document.getElementById('days').innerHTML =
         `
             <div class = "value">
-                ${days+':'+normalised((hours%24))+':'+normalised((minutes%60))+':'+normalised((seconds%60))}
+                ${days+':'+normalised((hours%24))+':'+normalised((minutes%60))+':'+normalised((seconds%60))+'.'+normalised_ms(milliseconds)}
             </div>
             <div>
                 More Days!
@@ -51,7 +53,7 @@ let timer = setInterval
         `;
         
     }, 
-    1000
+    50
 );
 
 function normalised (a)
@@ -59,4 +61,9 @@ function normalised (a)
     return a<10 ? '0'+a : a;
 
 }
+function normalised_ms (a)
+{
+    return a<100 ? a<10 ? '00'+ a : '0'+a : a;
+}
+
 
