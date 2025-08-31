@@ -1,7 +1,7 @@
-let limit = 1040000
+let limit = 1000000
 
 console.log('VERSION 1: FIXED SECONDS');
-console.log('VERSION 2: FIXED MS');
+console.log('VERSION 2: FIXED MILLIOn');
 
 let timer = setInterval
 (
@@ -66,6 +66,7 @@ function normalised_ms (a)
 {
     return a<100 ? a<10 ? '00'+ a : '0'+a : a;
 }
+
 
 
 
