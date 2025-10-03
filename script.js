@@ -1,7 +1,7 @@
 let limit = 1000000
 
 console.log('VERSION 1: FIXED SECONDS');
-console.log('VERSION 3: since');
+console.log('VERSION 3: since color');
 
 let timer = setInterval
 (
@@ -15,7 +15,6 @@ let timer = setInterval
         milliseconds*=-1;
         milliseconds%=1000;
         console.log(seconds);
-        document.body.style.setProperty('background-color', `rgb(${Math.ceil((Math.abs(limit-seconds)/limit) * 200)}, ${Math.floor((seconds/limit) * 200)}, 18)`)
         console.log(`rgb(${Math.ceil((Math.abs(limit-seconds)/limit) * 200)}, ${Math.floor((seconds/limit) * 200)}, 0)`);
         document.getElementById('seconds').innerHTML =
         `
@@ -67,6 +66,7 @@ function normalised_ms (a)
 {
     return a<100 ? a<10 ? '00'+ a : '0'+a : a;
 }
+
 
 
 
