@@ -1,7 +1,7 @@
 let limit = 3801600
 
 console.log('VERSION 1: FIXED SECONDS');
-console.log('VERSION 3: MIO!!');
+console.log('VERSION 3: MIO!! COLOR');
 
 let timer = setInterval
 (
@@ -15,6 +15,7 @@ let timer = setInterval
         milliseconds*=-1;
         milliseconds%=1000;
         console.log(seconds);
+        document.body.color = rgb(Math.ceil((Math.abs(limit-seconds)/limit) * 200), Math.floor((seconds/limit) * 200), 0);
         console.log(`rgb(${Math.ceil((Math.abs(limit-seconds)/limit) * 200)}, ${Math.floor((seconds/limit) * 200)}, 0)`);
         document.getElementById('seconds').innerHTML =
         `
@@ -66,6 +67,7 @@ function normalised_ms (a)
 {
     return a<100 ? a<10 ? '00'+ a : '0'+a : a;
 }
+
 
 
 
