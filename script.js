@@ -1,13 +1,13 @@
-let limit = 1000000
+let limit = 3801600
 
 console.log('VERSION 1: FIXED SECONDS');
-console.log('VERSION 3: since color');
+console.log('VERSION 3: MIO!!');
 
 let timer = setInterval
 (
     () => 
     {   
-        let milliseconds = Math.floor(new Date("09-05-2025") - new Date() - 16200000);
+        let milliseconds = Math.floor(new Date("21-01-2026") - new Date());
         let seconds = Math.floor(-milliseconds/1000);
         let minutes = Math.floor(seconds/60);
         let hours = Math.floor(minutes/60);
@@ -22,7 +22,7 @@ let timer = setInterval
                 ${Math.ceil(seconds) +'.'+normalised_ms(milliseconds)}
             </div>
             <div>
-                Seconds Since
+                Seconds
             </div>
         `;
         document.getElementById('minutes').innerHTML =
@@ -31,7 +31,7 @@ let timer = setInterval
                 ${minutes+':'+normalised((seconds%60))+'.'+normalised_ms(milliseconds)}
             </div>
             <div>
-                Minutes Since
+                Minutes
             </div>
         `;
         document.getElementById('hours').innerHTML =
@@ -40,7 +40,7 @@ let timer = setInterval
                 ${hours+':'+normalised((minutes%60))+':'+normalised((seconds%60))+'.'+normalised_ms(milliseconds)}
             </div>
             <div>
-                Hours Since
+                Hours
             </div>
         `;
         document.getElementById('days').innerHTML =
@@ -49,7 +49,7 @@ let timer = setInterval
                 ${days+':'+normalised((hours%24))+':'+normalised((minutes%60))+':'+normalised((seconds%60))+'.'+normalised_ms(milliseconds)}
             </div>
             <div>
-                Days Since
+                Days
             </div>
         `;
         
@@ -66,6 +66,7 @@ function normalised_ms (a)
 {
     return a<100 ? a<10 ? '00'+ a : '0'+a : a;
 }
+
 
 
 
